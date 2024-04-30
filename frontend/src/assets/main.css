@@ -33,6 +33,7 @@ body::-webkit-scrollbar {
 }
 
 a {
+  color: #ffffff;
   text-decoration: none;
   cursor: pointer;
 }

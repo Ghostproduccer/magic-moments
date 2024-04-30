@@ -1,7 +1,9 @@
-<script setup></script>
+<script setup>
+import HeaderComponent from './components/HeaderComponent.vue'
+</script>
 
 <template>
-  <h1>Magic Moments</h1>
+  <HeaderComponent />
 </template>
 
 <style scoped></style>
