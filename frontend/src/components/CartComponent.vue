@@ -2,7 +2,7 @@
 
 <template>
     <div class="cart-btn">
-        <RouterLink to="/cart" class="cart"><i class="bi bi-cart-fill"></i></RouterLink>
+        <RouterLink to="/cart" class="cart"><i class="bi bi-cart"></i></RouterLink>
         <span class="count">3</span>
     </div>
 </template>
