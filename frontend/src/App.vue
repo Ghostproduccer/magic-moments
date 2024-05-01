@@ -4,6 +4,9 @@ import HeaderComponent from './components/HeaderComponent.vue'
 
 <template>
   <HeaderComponent />
+  <main id="main">
+    <RouterView />
+  </main>
 </template>
 
 <style scoped></style>
