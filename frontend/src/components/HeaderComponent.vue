@@ -41,11 +41,11 @@ const handleNavActive = (id) => {
 <style scoped>
 header {
   position: relative;
-  width: 95%;
+  width: 100%;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 30px 100px 30px 200px;
+  padding: 30px 100px 30px 100px;
   z-index: 1100;
 }
 

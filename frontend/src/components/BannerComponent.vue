@@ -29,7 +29,7 @@ const handleBannerChange = (id) => {
 </template>
 <style scoped>
 .banner {
-  position: relative;
+  position: absolute;
   width: 100%;
   min-height: 90vh;
   background: var(--bgColor);

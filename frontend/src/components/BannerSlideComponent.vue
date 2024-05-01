@@ -12,15 +12,17 @@ const props = defineProps({
     <div class="content">
       <h1>{{ props.item.name }}</h1>
       <p>{{ props.item.brief.slice(0, 100) }}</p>
-      <div class="colors">
-        <h4>color</h4>
-        <div class="color-list">
-          <span
-            v-for="color in props.item.colors"
-            :key="color.id"
-            :style="{ background: color.color }"
-            :class="{ active: color.active }"
-          ></span>
+      <div class="options-container">
+        <div class="colors">
+          <h4>color</h4>
+          <div class="color-list">
+            <span
+              v-for="color in props.item.colors"
+              :key="color.id"
+              :style="{ background: color.color }"
+              :class="{ active: color.active }"
+            ></span>
+          </div>
         </div>
       </div>
       <div class="pricing">
@@ -81,30 +83,36 @@ const props = defineProps({
   display: flex;
   flex-direction: column;
   justify-content: center;
-  padding: 0 20px 0 200px;
+  padding: 0 20px 0 100px;
 }
 
 .content h1 {
   color: #ffffff;
-  font-size: 5rem;
+  font-size: 3.5rem;
 }
 
 .content p {
   color: #ffffff;
-  font-size: 1.2rem;
-  margin-bottom: 50px;
+  font-size: 1.05rem;
+  margin-bottom: 30px;
+}
+
+.content .options-container {
+  display: block;
+  
 }
 
 .content .colors {
-  display: inline-flex;
+  display: block;
   gap: 50px;
   align-items: center;
-  margin-bottom: 50px;
+  margin-bottom: 30px;
 }
 
 .content .colors h4 {
   color: #ffffff;
   text-transform: uppercase;
+  font-size: 1.35rem;
 }
 
 .content .colors .color-list {
@@ -187,8 +195,8 @@ const props = defineProps({
   position: absolute;
   left: 50%;
   transform: translateX(-50%);
-  width: 500px;
-  height: 800px;
+  width: 600px;
+  height: 600px;
   object-fit: cover;
 }
 
