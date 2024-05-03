@@ -1,7 +1,7 @@
 <script setup>
 import { navsData } from '@/data/data'
 import { ref } from 'vue'
-import CartComponent from './CartComponent.vue';
+import CartComponent from './CartComponent.vue'
 
 const navs = ref(navsData)
 
@@ -19,10 +19,16 @@ const handleNavActive = (id) => {
     <RouterLink to="/" class="logo">Magic Moments</RouterLink>
     <ul class="nav">
       <li v-for="nav in navs" :key="nav.id">
-        <RouterLink to="/" v-if="nav.name === 'Home'" :class="{ active: nav.active }" @click="handleNavActive(nav.id)">
+        <RouterLink
+          to="/"
+          v-if="nav.name === 'Home'"
+          :class="{ active: nav.active }"
+          @click="handleNavActive(nav.id)"
+        >
           <i class="bi bi-house-fill"></i>
         </RouterLink>
-        <RouterLink v-else to="/" :class="{ active: nav.active }" @click="handleNavActive(nav.id)">{{ nav.name }}
+        <RouterLink v-else to="/" :class="{ active: nav.active }" @click="handleNavActive(nav.id)"
+          >{{ nav.name }}
         </RouterLink>
       </li>
     </ul>
@@ -35,11 +41,11 @@ const handleNavActive = (id) => {
 <style scoped>
 header {
   position: relative;
-  width: 95%;
+  width: 100%;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 30px 100px 30px 200px;
+  padding: 30px 100px 30px 100px;
   z-index: 1100;
 }
 

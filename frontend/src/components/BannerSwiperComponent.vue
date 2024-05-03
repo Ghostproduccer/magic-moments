@@ -1,0 +1,134 @@
+<script setup>
+//import swiper modules, components and styles
+import { Navigation } from 'swiper/modules'
+
+import { Swiper, SwiperSlide } from 'swiper/vue'
+
+import 'swiper/css'
+import 'swiper/css/navigation'
+
+// const components = {
+//   Swiper,
+//   SwiperSlide
+// }
+const modules = [Navigation]
+
+const props = defineProps({
+  items: {
+    type: Array,
+    required: true
+  },
+  bannerChange: {
+    type: Function,
+    required: true
+  }
+})
+</script>
+
+<template>
+  <swiper
+    :slidesPerView="3"
+    :spaceBetween="30"
+    :navigation="true"
+    :modules="modules"
+    class="mySwiper"
+  >
+    <swiper-slide v-for="item in props.items.slice(0, 5)" :key="item.id">
+      <img :src="item.imgUrl" alt="" @click="bannerChange(item.id)" />
+    </swiper-slide>
+  </swiper>
+</template>
+
+<style scoped>
+.swiper {
+  position: absolute;
+  bottom: 50px;
+  left: 10%;
+  width: 30%;
+  padding-top: 10px;
+  padding-bottom: 50px;
+}
+
+.swiper-slide {
+  background-position: center;
+  background-size: cover;
+  width: 100px;
+  height: 100px;
+  cursor: pointer;
+}
+
+.swiper .swipper-button-prev {
+  position: absolute;
+  left: 0;
+  top: 50%;
+  width: 54px;
+  height: 54px;
+}
+
+.swiper .swipper-button-next {
+  position: absolute;
+  left: 0;
+  top: 50%;
+  width: 54px;
+  height: 54px;
+}
+
+.swiper .swipper-button-prev:after,
+.swiper .swipper-button-next::after {
+  font-size: 30px;
+  line-height: 0;
+  width: 54px;
+  height: 54px;
+  background: transparent;
+  border-radius: 50%;
+  transition: 0.3s;
+  color: #ffffff;
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  backdrop-filter: blur(20px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: 0.3s;
+}
+
+.swiper .swipper-button-prev:hover,
+.swiper .swipper-button-next:hover {
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.3) !important;
+  color: rgba(255, 255, 255, 0.8) !important;
+}
+
+.swiper-slide img {
+  display: block;
+  width: 100%;
+}
+
+/* @media (max-width: 1440px) {
+  .swiper {
+    position: absolute;
+  bottom: 80px;
+  left: 13%;
+  width: 30%;
+  padding-top: 10px;
+  padding-bottom: 30px;
+
+  }
+}
+
+@media (max-width: 768px) {
+  .swiper {
+    left: 60%;
+    transform: translateX(-50%);
+    padding-top: 0;
+    padding-bottom: 0;
+    width: 70%;
+    bottom: 100px;
+    right: 0;
+  }
+
+  .swiper .swipper-button-prev,
+  .swiper .swipper-button-next {
+    display: none;
+  }
+} */
+</style>
