@@ -19,7 +19,7 @@ public class ItemsController {
     @Autowired
     private ColorsRepository colorsRepository;
 
-    @CrossOrigin(origins = "http://localhost:4000")
+    @CrossOrigin(origins = "http://localhost:5173")
     @GetMapping("/items")
     public List<Items> items() {
         return itemsRepository.findAll();

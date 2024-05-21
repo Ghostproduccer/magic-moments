@@ -217,7 +217,7 @@ const props = defineProps({
   background: var(--third);
 }
 
-/* Responsive design */
+/* Responsive design
 @media (max-width: 1440px) {
   .content {
     padding-bottom: 100px;
@@ -305,6 +305,5 @@ const props = defineProps({
   .item-img .img-container img {
     width: 200px;
     height: 300px;
-  }
-}
+  } */
 </style>

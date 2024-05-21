@@ -5,8 +5,11 @@ import BannerSwiperComponent from './BannerSwiperComponent.vue'
 
 const items = ref([])
 
+// const urlapi = "http://localhost:8080/items"
+const urlapi = "http://localhost:4000/items"
+
 onMounted(() => {
-  fetch('http://localhost:4000/items')
+  fetch(urlapi)
     .then((res) => res.json())
     .then((data) => (items.value = data))
     .catch((e) => console.log(e.message))
