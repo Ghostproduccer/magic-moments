@@ -1,9 +1,19 @@
 <script setup>
-import { onMounted, ref } from 'vue'
+import { onMounted, ref, inject } from 'vue'
 import { useRoute } from 'vue-router'
 
 const route = useRoute()
 const id = route.params.id
+
+const qty = ref(1)
+const handleQtyChange = (add = true) => {
+  if (add) {
+    qty.value += 1
+  } else {
+    if (qty.value < 2) return
+    qty.value -= 1
+  }
+}
 
 const item = ref({})
 
@@ -14,14 +24,30 @@ onMounted(() => {
     .catch((e) => console.log(e))
 })
 
-const selectedColor = ref("#fdb82c")
-const handleColorChange = (color, id)=>{
-  selectedColor.value = color;
-  item.value.colors.map(color=>{
+const selectedColor = ref('#fdb82c')
+const handleColorChange = (color, id) => {
+  selectedColor.value = color
+  item.value.colors.map((color) => {
     color.active = false
-    if(color.id === id) color.active = true
+    if (color.id === id) color.active = true
     return color
   })
+}
+
+const cart = ref(inject("cart"))
+
+const handleAddToCart = item => {
+  const itemToAdd = { ...item, color: selectedColor.value, qty: qty.value }
+  
+  const existingItem = cart.value.find(prod => prod.id === item.id)
+  
+  if (existingItem) {
+    existingItem.qty += itemToAdd.qty
+  } else {
+    cart.value.push(itemToAdd)
+  }
+  
+  console.log(cart.value)
 }
 </script>
 <template>
@@ -67,11 +93,22 @@ const handleColorChange = (color, id)=>{
                 v-for="color in item.colors"
                 :key="color.id"
                 :style="{ background: color.color }"
-                :class="{active: color.active}"
+                :class="{ active: color.active }"
                 @click="handleColorChange(color.color, color.id)"
               >
               </span>
             </div>
+            <h4>Quantity</h4>
+            <div class="quantity">
+              <a href="#" class="qtyButton" @click.stop.prevent="handleQtyChange(false)"
+                ><i class="bi bi-dash"></i
+              ></a>
+              <span class="qty">{{ qty }}</span>
+              <a href="#" class="qtyButton" @click.stop.prevent="handleQtyChange()"
+                ><i class="bi bi-plus"></i
+              ></a>
+            </div>
+            <a href="#" class="addButton me-3" @click.stop.prevent="handleAddToCart(item)">Add to Cart</a>
           </div>
         </div>
       </div>
@@ -91,12 +128,12 @@ const handleColorChange = (color, id)=>{
   font-family: 'Roboto', sans-serif;
 }
 
-.product-details h2  {
+.product-details h2 {
   margin-bottom: 20px;
 }
 
 .itemPreview {
-  background:  var(--bgColor);
+  background: var(--bgColor);
   box-shadow: 0px 0 15px rgba(255, 255, 255, 0.2);
   margin-bottom: 20px;
 }
@@ -109,7 +146,7 @@ const handleColorChange = (color, id)=>{
 }
 
 .discount {
-  color: var(--primary)
+  color: var(--primary);
 }
 
 .currentPrice {
@@ -134,7 +171,7 @@ const handleColorChange = (color, id)=>{
 
 .color span {
   padding: 10px;
-  content: "";
+  content: '';
   border: 5px solid #ffffff;
   border-radius: 50%;
   transition: 0.3s;
@@ -189,5 +226,4 @@ const handleColorChange = (color, id)=>{
 }
 
 /* FALTA LA PARTE RESPONSIVE */
-
 </style>
