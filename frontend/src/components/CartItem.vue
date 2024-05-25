@@ -55,12 +55,12 @@ const handleRemoveFromCart = (target) => {
 .shopCartItem th {
   align-items: center  ;
   background: transparent;
-  color: #ffffff;
+  color: var(--textColor);
   font-size: 1.2rem;
 }
 
 .shopCartItem a {
-  color: #ffffff;
+  color: var(--textColor);
   font-size: 1.6rem;
 }
 

@@ -26,7 +26,7 @@ const props = defineProps({
         </div>
       </div>
       <div class="pricing">
-        <RouterLink :to="`/products/${props.item.id}`" class="add-to-cart">Learn More</RouterLink>
+        <RouterLink :to="`/products/${props.item.id}`" class="add-to-cart">Customize!</RouterLink>
 
         <span
           class="price"
@@ -87,12 +87,12 @@ const props = defineProps({
 }
 
 .content h1 {
-  color: #ffffff;
+  color: var(--textColor);
   font-size: 3.5rem;
 }
 
 .content p {
-  color: #ffffff;
+  color: var(--textColor);
   font-size: 1.05rem;
   margin-bottom: 30px;
 }
@@ -110,7 +110,7 @@ const props = defineProps({
 }
 
 .content .colors h4 {
-  color: #ffffff;
+  color: var(--textColor);
   text-transform: uppercase;
   font-size: 1.35rem;
 }
@@ -123,7 +123,7 @@ const props = defineProps({
 .content .colors .color-list span {
   padding: 10px;
   content: '';
-  border: 5px solid #ffffff;
+  border: 5px solid var(--textColor);
   border-radius: 50%;
   transition: 0.3s;
 }
@@ -140,8 +140,8 @@ const props = defineProps({
 }
 
 .content .pricing .add-to-cart {
-  color: #000000;
-  background: #ffffff;
+  color: var(--bgColor);
+  background: var(--textColor);
   padding: 20px 40px;
   text-transform: uppercase;
   font-size: 1.2rem;
@@ -207,7 +207,7 @@ const props = defineProps({
   display: flex;
   justify-content: center;
   align-items: center;
-  color: #ffffff;
+  color: var(--textColor);
   font-size: 3.5rem;
   font-weight: 600;
   width: 80px;
@@ -247,8 +247,8 @@ const props = defineProps({
   }
 
   .item-img .img-container img {
-    width: 400px;
-    height: 500px;
+    width: 420px;
+    height: 420px;
   }
 
   .content .pricing .add-to-cart {

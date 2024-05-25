@@ -76,12 +76,12 @@ const totalItems = handleTotalItems(cart.value)
 }
 
 .shoppingCart h1 {
-  color: #ffffff;
+  color: var(--textColor);
 }
 
 .shopCartTable {
   margin-top: 50px;
-  color: #ffffff;
+  color: var(--textColor);
   background: var(--bgColor);
   box-shadow: 0px 0 15px rgba(255, 255, 255, 0.2);
 }
@@ -92,12 +92,12 @@ const totalItems = handleTotalItems(cart.value)
 
 .shopCartTable thead tr th {
   background: transparent;
-  color: #ffffff;
+  color: var(--textColor);
 }
 
 .itemCount {
   font-size: 1.3rem;
-  color: #ffffff;
+  color: var(--textColor);
 }
 
 .payment {
@@ -105,13 +105,13 @@ const totalItems = handleTotalItems(cart.value)
   align-items: center;
   gap: 50px;
   font-size: 1.3rem;
-  color: #ffffff;
+  color: var(--textColor);
 }
 
 .payment a {
   padding: 10px 20px;
   text-decoration: none;
-  color: #ffffff;
+  color: var(--textColor);
   display: inline-flex;
   align-items: center;
   gap: 10px;

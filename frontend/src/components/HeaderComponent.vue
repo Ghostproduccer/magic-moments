@@ -51,7 +51,7 @@ header {
 
 .logo {
   font-size: 30px;
-  color: #fff;
+  color: var(--textColor);
   letter-spacing: 2px;
   font-weight: 800;
 }
@@ -66,7 +66,7 @@ header {
 }
 
 nav li a {
-  color: #ffffff;
+  color: var(--textColor);
   text-decoration: none;
   font-weight: 600;
   letter-spacing: 2px;

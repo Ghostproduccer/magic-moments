@@ -115,6 +115,7 @@ const handleAddToCart = item => {
     </div>
   </div>
 </template>
+
 <style scoped>
 .product-details {
   transition: 0.5s;
@@ -124,7 +125,7 @@ const handleAddToCart = item => {
 .product-details h2,
 .product-details h4,
 .product-details p {
-  color: #ffffff;
+  color: var(--textColor);
   font-family: 'Roboto', sans-serif;
 }
 
@@ -138,11 +139,17 @@ const handleAddToCart = item => {
   margin-bottom: 20px;
 }
 
-.itemPrice {
-  display: inline-flex;
-  gap: 20px;
+.item-price {
+  display: flex;
   align-items: center;
+  gap: 10px; /* Adjust the gap as needed */
   margin-bottom: 20px;
+}
+
+.price,
+.discount,
+.currentPrice {
+  margin: 0; /* Reset margin if needed */
 }
 
 .discount {
@@ -154,7 +161,7 @@ const handleAddToCart = item => {
 }
 
 .currentPrice .now {
-  font-size: 2.5rem;
+  font-size: 1.5rem;
   color: var(--primary);
   font-style: italic;
 }
@@ -172,7 +179,7 @@ const handleAddToCart = item => {
 .color span {
   padding: 10px;
   content: '';
-  border: 5px solid #ffffff;
+  border: 5px solid var(--textColor);
   border-radius: 50%;
   transition: 0.3s;
 }
@@ -190,7 +197,7 @@ const handleAddToCart = item => {
   padding: 10px;
   width: 120px;
   background: 0px 0 15px rgba(255, 255, 255, 0.2);
-  margin-bottom: 50px;
+  margin-bottom: 20px;
 }
 
 .qty {
@@ -209,7 +216,7 @@ const handleAddToCart = item => {
 .addButton {
   position: relative;
   margin-top: 20px;
-  color: #ffffff;
+  color: var(--textColor);
   text-decoration: none;
   padding: 10px 25px;
   width: 300px;
@@ -224,6 +231,4 @@ const handleAddToCart = item => {
 .addButton:hover {
   background: #fe9400;
 }
-
-/* FALTA LA PARTE RESPONSIVE */
 </style>
