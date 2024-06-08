@@ -1,15 +1,18 @@
 package com.magicmoments.backendapi.model;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonManagedReference;
 import jakarta.persistence.*;
+import lombok.Data;
 import lombok.Getter;
 import lombok.Setter;
 
 import java.math.BigDecimal;
-import java.util.List;
+import java.util.Set;
 
-@Getter
-@Setter
+@Data
 @Entity
 @Table(name = "items")
 public class Items {
@@ -28,9 +31,6 @@ public class Items {
     @Column(name = "details", columnDefinition = "TEXT")
     private String details;
 
-    @Column(name = "color")
-    private String color;
-
     @Column(name = "qty")
     private int qty;
 
@@ -43,21 +43,12 @@ public class Items {
     @Column(name = "discount")
     private BigDecimal discount;
 
-    @Column(name = "img_url")
-    private String imgUrl;
-
     @Column(name = "video_url")
     private String videoUrl;
 
     @Column(name = "active")
     private boolean active;
 
-    @ManyToMany
-    @JoinTable(
-            name = "item_color",
-            joinColumns = @JoinColumn(name = "item_id"),
-            inverseJoinColumns = @JoinColumn(name = "color_id")
-    )
-    @JsonManagedReference
-    private List<Colors> colors;
+    @OneToMany(mappedBy = "item", fetch = FetchType.EAGER)
+    private Set<ItemsColors> item_color;
 }

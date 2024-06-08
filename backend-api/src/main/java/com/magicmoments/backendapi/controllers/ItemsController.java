@@ -2,31 +2,33 @@ package com.magicmoments.backendapi.controllers;
 
 import com.magicmoments.backendapi.model.Colors;
 import com.magicmoments.backendapi.model.Items;
-import com.magicmoments.backendapi.service.repositories.ColorsRepository;
-import com.magicmoments.backendapi.service.repositories.ItemsRepository;
+import com.magicmoments.backendapi.service.dto.ItemsDto;
+import com.magicmoments.backendapi.service.srv.ItemsService;
+import io.swagger.v3.oas.annotations.Operation;
+import io.swagger.v3.oas.annotations.tags.Tag;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.CrossOrigin;
+
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
 
 @RestController
+@Tag(name = "Company items")
 public class ItemsController {
-    @Autowired
-    private ItemsRepository itemsRepository;
 
     @Autowired
-    private ColorsRepository colorsRepository;
+    private ItemsService itemsService;
 
-    @CrossOrigin(origins = "http://localhost:5173")
-    @GetMapping("/items")
-    public List<Items> items() {
-        return itemsRepository.findAll();
+    @Operation(summary = "Get all items and the associated colors")
+    @GetMapping("/itemsColors")
+    public List<ItemsDto> items() {
+        return itemsService.getAllItemsWithColor();
     }
 
+    @Operation(summary = "Get all colors")
     @GetMapping("/colors")
     public List<Colors> colors() {
-        return colorsRepository.findAll();
+        return null;
     }
 }

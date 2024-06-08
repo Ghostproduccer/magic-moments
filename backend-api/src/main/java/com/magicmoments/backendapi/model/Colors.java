@@ -1,32 +1,28 @@
 package com.magicmoments.backendapi.model;
 
 import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 import jakarta.persistence.*;
+import lombok.Data;
 import lombok.Getter;
 import lombok.Setter;
 
 import java.util.List;
+import java.util.Set;
 
-@Getter
-@Setter
+@Data
 @Entity
 @Table(name = "colors")
 public class Colors {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "id")
-    private int id;
+    @Column(name = "name")
+    private String name;
 
-    @ManyToMany(mappedBy = "colors")
-    @JsonBackReference
-    private List<Items> items;
+    @OneToMany(mappedBy = "color")
+    private Set<ItemsColors> item_color;
 
-    @Column(name = "color")
-    private String color;
+    @Column(name = "hex_code")
+    private String hex_code;
 
-    @Column(name = "active")
-    private boolean active;
-
-    // Getters and setters
 }
