@@ -14,17 +14,17 @@
   align-items: center;
   gap: 10px;
   transition: 0.5s;
-  color: #ffffff;
+  color: var(--textColor);
 }
 
 .cart {
   font-size: 25px;
-  color: #ffffff;
+  color: var(--textColor);
 }
 
 .count {
   font-size: 1rem;
-  color: #ffffff;
+  color: var(--textColor);
   width: 25px;
   height: 25px;
   padding: 5px;
