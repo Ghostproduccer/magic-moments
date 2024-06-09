@@ -1,9 +1,11 @@
 <script setup>
 import { onMounted, ref, inject } from 'vue'
-import { useRoute } from 'vue-router'
+import { useRoute, useRouter } from 'vue-router'
 
 const route = useRoute()
 const id = route.params.id
+
+const router = useRouter();
 
 const qty = ref(1)
 const handleQtyChange = (add = true) => {
@@ -48,6 +50,7 @@ const handleAddToCart = item => {
   }
   
   console.log(cart.value)
+  router.push('/cart');
 }
 </script>
 <template>

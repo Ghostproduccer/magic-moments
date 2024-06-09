@@ -17,7 +17,7 @@ const handleTotalItems = (items) => {
     total += item.qty;
   });
   return total;
-};
+}
 
 const totalPayment = handleTotalPayment()
 const totalItems = handleTotalItems(cart.value)
@@ -54,7 +54,7 @@ const totalItems = handleTotalItems(cart.value)
         <div class="col-lg-10 d-flex justify-content-end">
           <div class="payment">
             Total: {{ totalPayment }}
-            <a href="#">Check out <i class="bi"></i></a>
+            <router-link to="/register">Check Out</router-link>
           </div>
         </div>
       </div>
