@@ -1,9 +1,22 @@
-<script setup></script>
+<script setup>
+import { ref, inject } from 'vue'
+
+const cart = ref(inject('cart'))
+
+const handleTotalItems = (items) => {
+  let total = 0;
+  items.forEach(item => {
+    total += item.qty;
+  });
+  return total;
+};
+
+</script>
 
 <template>
   <div class="cart-btn">
     <RouterLink to="/cart" class="cart"><i class="bi bi-cart"></i></RouterLink>
-    <span class="count">3</span>
+    <span class="count">{{ handleTotalItems(cart) }}</span>
   </div>
 </template>
 

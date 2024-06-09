@@ -27,7 +27,7 @@ const handleNavActive = (id) => {
         >
           <i class="bi bi-house-fill"></i>
         </RouterLink>
-        <RouterLink v-else to="/" :class="{ active: nav.active }" @click="handleNavActive(nav.id)"
+        <RouterLink v-else :to="nav.link" :class="{ active: nav.active }" @click="handleNavActive(nav.id)"
           >{{ nav.name }}
         </RouterLink>
       </li>
