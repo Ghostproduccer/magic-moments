@@ -14,10 +14,10 @@ const handleTotalItems = (items) => {
 </script>
 
 <template>
-  <div class="cart-btn">
-    <RouterLink to="/cart" class="cart"><i class="bi bi-cart"></i></RouterLink>
+  <RouterLink to="/cart" class="cart-btn">
+    <i class="bi bi-cart cart"></i>
     <span class="count">{{ handleTotalItems(cart) }}</span>
-  </div>
+  </RouterLink>
 </template>
 
 <style scoped>
@@ -30,19 +30,29 @@ const handleTotalItems = (items) => {
   color: var(--textColor);
 }
 
-.cart {
-  font-size: 25px;
+.cart-btn:hover .cart {
+  /* Estilos para el ícono de carrito cuando se hace hover sobre el enlace */
   color: var(--textColor);
 }
 
+.cart-btn:hover .count {
+  
+  background: var(--textColor);
+}
+
+
+.cart {
+  font-size: 25px;
+  color: var(--primary);
+}
 .count {
   font-size: 1rem;
-  color: var(--textColor);
+  color: var(--bgColor);
   width: 25px;
   height: 25px;
   padding: 5px;
   border-radius: 50%;
-  background: #00a950;
+  background: var(--primary);
   display: inline-flex;
   justify-content: center;
   align-items: center;

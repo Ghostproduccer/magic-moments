@@ -1,19 +1,28 @@
 <script setup>
-import { onMounted, ref } from 'vue'
+import { computed} from 'vue'
 import BannerSlideComponent from './BannerSlideComponent.vue'
 import BannerSwiperComponent from './BannerSwiperComponent.vue'
 
-const items = ref([])
+import { useItemsStore } from '@/store/items'
+
+const itemsStore = useItemsStore()
+
+const items = computed(() => {
+  return itemsStore.items;
+});
+
+
+// const items = ref([])
 
 // const urlapi = "http://localhost:8080/itemsColors"
-const urlapi = "http://localhost:4000/items"
+// const urlapi = "http://localhost:4000/items"
 
-onMounted(() => {
-  fetch(urlapi)
-    .then((res) => res.json())
-    .then((data) => (items.value = data))
-    .catch((e) => console.log(e.message))
-})
+// onMounted(() => {
+//   fetch(urlapi)
+//     .then((res) => res.json())
+//     .then((data) => (items.value = data))
+//     .catch((e) => console.log(e.message))
+// })
 
 const handleBannerChange = (id) => {
   items.value.map((item) => {

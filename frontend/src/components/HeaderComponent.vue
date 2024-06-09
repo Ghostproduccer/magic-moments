@@ -2,6 +2,7 @@
 import { navsData } from '@/data/data'
 import { ref } from 'vue'
 import CartComponent from './CartComponent.vue'
+import AuthComponent from './AuthComponent.vue'
 
 const navs = ref(navsData)
 
@@ -16,23 +17,10 @@ const handleNavActive = (id) => {
 
 <template>
   <header id="home">
-    <RouterLink to="/" class="logo">Magic Moments</RouterLink>
-    <ul class="nav">
-      <li v-for="nav in navs" :key="nav.id">
-        <RouterLink
-          to="/"
-          v-if="nav.name === 'Home'"
-          :class="{ active: nav.active }"
-          @click="handleNavActive(nav.id)"
-        >
-          <i class="bi bi-house-fill"></i>
-        </RouterLink>
-        <RouterLink v-else :to="nav.link" :class="{ active: nav.active }" @click="handleNavActive(nav.id)"
-          >{{ nav.name }}
-        </RouterLink>
-      </li>
-    </ul>
+    <RouterLink to="/" class="logo" @click = "handleNavActive(1)">Magic Moments</RouterLink>
+    
     <div class="features">
+      <AuthComponent/>
       <CartComponent />
     </div>
   </header>
@@ -54,6 +42,10 @@ header {
   color: var(--textColor);
   letter-spacing: 2px;
   font-weight: 800;
+}
+
+.logo:hover {
+  color: var(--primary)
 }
 
 .nav {
@@ -82,7 +74,7 @@ nav li a {
 .features {
   display: flex;
 
-  gap: 10px;
+  gap: 60px;
 }
 
 @media (max-width: 768px) {

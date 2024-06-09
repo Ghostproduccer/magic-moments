@@ -1,5 +1,12 @@
 <script setup>
+import { onMounted } from 'vue';
 import HeaderComponent from './components/HeaderComponent.vue'
+import { useItemsStore } from '@/store/items'
+
+const itemsStore = useItemsStore()
+onMounted(() => {
+  itemsStore.fetchItems()
+})
 </script>
 
 <template>
