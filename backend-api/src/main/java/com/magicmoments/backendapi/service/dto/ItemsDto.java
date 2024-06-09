@@ -18,4 +18,5 @@ public class ItemsDto {
     private String videoUrl;
     private boolean active;
     private List<ItemsColorsDto> item_color;
+    private String defaultImgUrl;
 }

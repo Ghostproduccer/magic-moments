@@ -51,4 +51,7 @@ public class Items {
 
     @OneToMany(mappedBy = "item", fetch = FetchType.EAGER)
     private Set<ItemsColors> item_color;
+
+    @Column(name = "default_img_url")
+    private String defaultImgUrl;
 }
