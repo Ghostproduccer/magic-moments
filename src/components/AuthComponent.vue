@@ -4,7 +4,7 @@
 
 <template>
   <div class="auth-section">
-    <RouterLink to="/login" class="auth">Register / Log in</RouterLink>
+    <RouterLink to="/login" class="auth">Log in / Sign Up</RouterLink>
   </div>
 </template>
 

@@ -8,7 +8,7 @@ const checkPassword = () => {}
     <main>
       <div class="container">
         <div class="container-fluid">
-          <h4 class="mb-3">Register</h4>
+          <h4 class="mb-3">Sign Up</h4>
           <form method="post">
             <div class="row g-3">
               <div class="col-sm-4">
@@ -55,7 +55,7 @@ const checkPassword = () => {}
             <br />
             <div class="row g-3">
               <div class="col-4">
-                <label for="password" class="form-label">Contraseña</label>
+                <label for="password" class="form-label">Password</label>
                 <div class="input-group has-validation">
                   <span class="input-group-text"><i class="bi bi-key"></i></span>
                   <input
@@ -109,9 +109,6 @@ const checkPassword = () => {}
         </div>
       </div>
     </main>
-    <footer class="my-5 pt-5 text-muted text-center text-small">
-      <p class="mb-1">&copy; Bruno Rodríguez</p>
-    </footer>
   </div>
 </template>
 <style scoped>
