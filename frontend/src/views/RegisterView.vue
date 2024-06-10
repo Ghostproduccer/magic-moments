@@ -13,7 +13,7 @@
                         <div class="row g-3">
                             <div class="col-sm-4">
                                 <label for="firstName" class="form-label">Nombre</label>
-                                <input type="text" class="form-control" id="firstName" placeholder="Nombre" name="nombre"
+                                <input type="text" class="form-control" id="firstName" placeholder="Nombre" name="name"
                                     required>
                                 <div class="invalid-feedback">
                                     Por favor introduzca su nombre.
@@ -22,7 +22,7 @@
 
                             <div class="col-sm-4">
                                 <label for="lastName" class="form-label">Apellidos</label>
-                                <input type="text" class="form-control" id="lastName" placeholder="Apellidos" name="apellidos"
+                                <input type="text" class="form-control" id="lastName" placeholder="Apellidos" name="surname"
                                     required>
                                 <div class="invalid-feedback">
                                     Por favor, introduzca sus apellidos.
@@ -36,7 +36,7 @@
                                 <div class="input-group has-validation">
                                     <span class="input-group-text">@</span>
                                     <input type="text" class="form-control" id="username" placeholder="Username"
-                                        name="usuario" required>
+                                        name="username" required>
                                     <div class="invalid-feedback">
                                         El nombre de usuario es obligatorio.
                                     </div>
@@ -55,7 +55,7 @@
                                             <path d="M4 8a1 1 0 1 1-2 0 1 1 0 0 1 2 0z" />
                                         </svg></span>
                                     <input type="password" class="form-control" id="password" placeholder="***********"
-                                        name="contrasena" required>
+                                        name="password" required>
                                     <div class="invalid-feedback">
                                         la contraseña ees obligatoria
                                     </div>
@@ -71,7 +71,7 @@
                                             <path d="M4 8a1 1 0 1 1-2 0 1 1 0 0 1 2 0z" />
                                         </svg></span>
                                     <input type="password" class="form-control" id="password" placeholder="***********"
-                                        name="contrasena" required>
+                                        name="password" required>
                                     <div class="invalid-feedback">
                                         la contraseña ees obligatoria
                                     </div>
