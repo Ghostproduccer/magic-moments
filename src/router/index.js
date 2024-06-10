@@ -24,8 +24,8 @@ const router = createRouter({
       component: CartView
     },
     {
-      path: '/register',
-      name: 'register',
+      path: '/signup',
+      name: 'signup',
       component: SignUpView
     },
     {

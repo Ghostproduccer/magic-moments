@@ -54,7 +54,7 @@ const totalItems = handleTotalItems(cart.value)
         <div class="col-lg-10 d-flex justify-content-end">
           <div class="payment">
             Total: {{ totalPayment }}
-            <router-link to="/register">Check Out</router-link>
+            <router-link to="/signup">Check Out</router-link>
           </div>
         </div>
       </div>

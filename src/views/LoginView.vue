@@ -1,11 +1,10 @@
 <script setup>
-
 </script>
 <template>
     <div class="container d-flex justify-content-center">
       <div class="card">
         <div class="card-body pb-5 ps-5 pe-5">
-          <form class="mb-3 mt-md-1 was-validated">
+          <form class="mb-3 mt-md-1 was-validated" @submit="handleLogin">
             <div class="container">Please, enter your username and password:</div>
             <div class="container d-flex justify-content-center"><img src="/images/stars.png" alt="" class="img-fluid"></div>
             <div class="mb-3">
@@ -24,7 +23,7 @@
             </div>
           </form>
           <div>
-            <p class="mb-0  text-center text">¿No tienes cuenta? <router-link to="/register" class="text-light fw-bold">
+            <p class="mb-0  text-center text">¿No tienes cuenta? <router-link to="/signup" class="text-light fw-bold">
                 Regístrate.</router-link></p>
           </div>
 

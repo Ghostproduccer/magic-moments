@@ -1,35 +1,31 @@
 <script setup>
-const handleSubmit = () => {}
-
-const checkPassword = () => {}
 </script>
 <template>
-  <div class="container">
+  <div class="container mt-2">
     <main>
       <div class="container">
         <div class="container-fluid">
           <h4 class="mb-3">Sign Up</h4>
-          <form method="post">
+          <br>
+          <form method="post" @submit.prevent="handlesubmit">
             <div class="row g-3">
               <div class="col-sm-4">
-                <label for="firstName" class="form-label">Name</label>
                 <input
                   type="text"
                   class="form-control"
                   id="firstName"
-                  placeholder="Name"
+                  placeholder="First name"
                   name="name"
                   required
                 />
               </div>
 
               <div class="col-sm-4">
-                <label for="surname" class="form-label">Surname</label>
                 <input
                   type="text"
                   class="form-control"
                   id="surname"
-                  placeholder="Apellidos"
+                  placeholder="Surname"
                   name="surname"
                   required
                 />
@@ -38,7 +34,6 @@ const checkPassword = () => {}
             <br />
             <div class="row g-3">
               <div class="col-4">
-                <label for="username" class="form-label">Username</label>
                 <div class="input-group has-validation">
                   <span class="input-group-text">@</span>
                   <input
@@ -101,8 +96,8 @@ const checkPassword = () => {}
 
               <hr class="my-4" />
               <br />
-              <button class="w-100 btn btn-secondary btn-lg" @click="handleSubmit">
-                Continuar
+              <button class="w-100 btn btn-secondary btn-lg" type="submit">
+                Continue
               </button>
             </div>
           </form>
@@ -111,6 +106,7 @@ const checkPassword = () => {}
     </main>
   </div>
 </template>
+
 <style scoped>
 .container {
   color: var(--textColor);

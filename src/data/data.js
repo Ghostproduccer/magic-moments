@@ -19,8 +19,8 @@ export const navsData = [
   },
   {
     id: 4,
-    name: 'Register',
-    link: 'register',
+    name: 'Signup',
+    link: 'signup',
     active: false
   }
 ]
