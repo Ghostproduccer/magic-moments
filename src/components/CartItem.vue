@@ -43,6 +43,9 @@ const handleRemoveFromCart = (target) => {
 </template>
 
 <style scoped>
+i:hover {
+  color: var(--primary);
+}
 .shopCartItem {
   margin-bottom: 20px;
 }

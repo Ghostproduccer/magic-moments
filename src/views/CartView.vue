@@ -82,7 +82,7 @@ const totalItems = handleTotalItems(cart.value)
 .shopCartTable {
   margin-top: 50px;
   color: var(--textColor);
-  background: var(--bgColor);
+  background: var(--bgColorLight);
   box-shadow: 0px 0 15px rgba(255, 255, 255, 0.2);
 }
 
