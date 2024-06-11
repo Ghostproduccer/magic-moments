@@ -83,7 +83,7 @@ const props = defineProps({
   display: flex;
   flex-direction: column;
   justify-content: center;
-  padding: 0 20px 0 100px;
+  padding: 0 20px 60px 100px;
 }
 
 .content h1 {
@@ -153,7 +153,7 @@ const props = defineProps({
 
 .content .pricing .price {
   color: var(--primary);
-  font-size: 2.8rem;
+  font-size: 2.5rem;
   font-weight: 600;
   letter-spacing: 1px;
 }
@@ -185,8 +185,8 @@ const props = defineProps({
   left: 50%;
   top: 50%;
   transform: translate(-50%, -50%);
-  width: 800px;
-  height: 800px;
+  width: 700px;
+  height: 700px;
   border-radius: 50%;
   border: 5px solid #414141;
 }
@@ -198,23 +198,6 @@ const props = defineProps({
   width: 600px;
   height: 600px;
   object-fit: cover;
-}
-
-.item-img .img-container .number {
-  position: absolute;
-  left: 0;
-  bottom: 0;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  color: var(--textColor);
-  font-size: 3.5rem;
-  font-weight: 600;
-  width: 80px;
-  height: 80px;
-  padding: 10px;
-  border-radius: 50%;
-  background: var(--third);
 }
 
 /* Responsive design

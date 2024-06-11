@@ -42,8 +42,8 @@ const props = defineProps({
 <style scoped>
 .swiper {
   position: absolute;
-  bottom: 50px;
-  left: 10%;
+  bottom: 0%;
+  left: 5%;
   width: 30%;
   padding-top: 10px;
   padding-bottom: 50px;

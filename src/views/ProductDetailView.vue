@@ -74,7 +74,7 @@ const handleAddToCart = item => {
             </div>
           </div>
           <div class="col-lg-5">
-            <img :src="item.imgUrl" alt="" class="img-fluid itemImg" />
+            <img :src="item.imgUrl" alt="" class="img-fluid item-img" />
           </div>
           <div class="col-lg-5">
             <h2>{{ item.name }}</h2>
@@ -147,6 +147,10 @@ const handleAddToCart = item => {
   align-items: center;
   gap: 10px; /* Adjust the gap as needed */
   margin-bottom: 20px;
+}
+
+.item-img {
+  filter: drop-shadow(16px 16px 20px red)
 }
 
 .price,
@@ -234,4 +238,5 @@ const handleAddToCart = item => {
 .addButton:hover {
   background: #fe9400;
 }
+
 </style>

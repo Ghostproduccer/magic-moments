@@ -15,7 +15,7 @@
       "bgColor": "#fdb82c",
       "price": 399,
       "discount": 0.05,
-      "imgUrl": "/images/item-img-1.png",
+      "imgUrl": "/images/item-img-mug-white.png",
       "videoUrl": "https://www.youtube.com/watch?v=Fkey2ZvX6lU",
       "active": true
     },
@@ -34,7 +34,7 @@
       "bgColor": "#fa5b5f",
       "price": 669,
       "discount": 0.0,
-      "imgUrl": "/images/item-img-2.png",
+      "imgUrl": "/images/item-img-cap-white.png",
       "videoUrl": "https://www.youtube.com/watch?v=Fkey2ZvX6lU",
       "active": false
     },
@@ -53,7 +53,7 @@
       "bgColor": "#67bb4a",
       "price": 890,
       "discount": 0.1,
-      "imgUrl": "/images/item-img-3.png",
+      "imgUrl": "/images/item-img-tee-white.png",
       "videoUrl": "https://www.youtube.com/watch?v=Fkey2ZvX6lU",
       "active": false
     },

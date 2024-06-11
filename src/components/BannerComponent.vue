@@ -43,7 +43,7 @@ const handleBannerChange = (id) => {
 .banner {
   position: absolute;
   width: 100%;
-  min-height: 90vh;
+  min-height: 85vh;
   background: var(--bgColor);
   transition: 1s;
 }
