@@ -1,37 +1,60 @@
-<script setup></script>
+<script setup>
+import { ref, inject } from 'vue'
+
+const cart = ref(inject('cart'))
+
+const handleTotalItems = (items) => {
+  let total = 0;
+  items.forEach(item => {
+    total += item.qty;
+  });
+  return total;
+};
+
+</script>
 
 <template>
-    <div class="cart-btn">
-        <RouterLink to="/cart" class="cart"><i class="bi bi-cart-fill"></i></RouterLink>
-        <span class="count">3</span>
-    </div>
+  <RouterLink to="/cart" class="cart-btn">
+    <i class="bi bi-cart cart"></i>
+    <span class="count">{{ handleTotalItems(cart) }}</span>
+  </RouterLink>
 </template>
 
 <style scoped>
-    .cart-btn {
-        display: flex;
-        font-size: 25px;
-        align-items: center;
-        gap: 10px;
-        transition: 0.5s;
-        color: #ffffff;
-    }
+.cart-btn {
+  display: flex;
+  font-size: 25px;
+  align-items: center;
+  gap: 10px;
+  transition: 0.5s;
+  color: var(--textColor);
+}
 
-    .cart {
-        font-size: 25px;
-        color: #ffffff;
-    }
+.cart-btn:hover .cart {
+  /* Estilos para el ícono de carrito cuando se hace hover sobre el enlace */
+  color: var(--textColor);
+}
 
-    .count {
-        font-size: 1rem;
-        color: #ffffff;
-        width: 25px;
-        height: 25px;
-        padding: 5px;
-        border-radius: 50%;
-        background: #00a950;
-        display: inline-flex;
-        justify-content: center;
-        align-items: center;
-    }
+.cart-btn:hover .count {
+  
+  background: var(--textColor);
+}
+
+
+.cart {
+  font-size: 25px;
+  color: var(--primary);
+}
+.count {
+  font-size: 1rem;
+  color: var(--bgColor);
+  width: 25px;
+  height: 25px;
+  padding: 5px;
+  border-radius: 50%;
+  background: var(--primary);
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+}
 </style>

@@ -7,20 +7,20 @@ export const navsData = [
   },
   {
     id: 2,
-    name: 'Products',
+    name: 'Customize!',
     link: 'products',
     active: false
   },
   {
     id: 3,
-    name: 'Services',
-    link: 'services',
+    name: 'Contact',
+    link: 'contact',
     active: false
   },
   {
     id: 4,
-    name: 'Contact',
-    link: 'contact',
+    name: 'Register',
+    link: 'register',
     active: false
   }
 ]
